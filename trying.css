@@ -1,0 +1,230 @@
+:root {
+    --color-primary: rgba(2, 2, 7, 0.911);;
+    --color-primary-light: #3f4797;
+    --color-primary-dark: #09052e;
+    --color-white: #c5c5c5;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+  
+  body {
+    box-sizing: border-box;
+    /* font-family: sans-serif; */
+    min-height: 100vh;
+  }
+  
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+  }
+  
+  .logo {
+    font-size: 25px;
+    text-transform: uppercase;
+    color: var(--color-white);
+    font-weight: 700;
+  }
+  .navigation {
+    background-color: aliceblue;
+    border-radius: 20px;
+  }
+  
+  .navigation ul {
+    list-style: none;
+  }
+  .in ul {
+    list-style: none;
+  }
+  
+  .header .navigation ul li {
+    float: left;
+    position: relative;
+    box-shadow :-2px -2px 12px 5px #494949;
+    border-radius: 80px/30px;
+    background: var(--color-primary);
+  }
+  .header .in ul li {
+    
+    position: relative;
+   
+  }
+  
+  .header .navigation ul li a {
+    font-size: 20px;
+    color: var(--color-white);
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    transition: all .2s ease;
+  }
+  
+  .header .navigation ul li a:hover {
+    background: var(--color-primary-light);
+  }
+  .header .in ul li a:hover {
+    
+    box-shadow: #494949;
+  }
+  
+  .header .navigation ul li ul {
+    position: absolute;
+    right: 0;
+    width: 300px;
+    background: var(--color-white);
+    border-radius: 20px;
+    
+    display: none; /*pour cacher les listes dans leurs parents*/
+  }
+
+
+  .header .in ul li .login {
+    
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    width: 45px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    text-align: center;
+    
+    
+    display: none;
+    
+  }
+
+  
+  
+  
+  .header .navigation ul li ul li a {
+    font-size: 15px;
+    text-transform: capitalize;
+  }
+  
+  .header .navigation ul li ul li ul {
+    position: absolute;
+    top: 0;
+    right: 300px;
+  }
+  
+  .header .navigation ul li ul li {
+    width: 100%;
+    border-top: 1px solid var(--color-primary-light);
+  }
+  
+  .header .navigation ul li:hover > ul {
+    display: initial; /*pour faire resortir les listes de leurs parents*/
+  }
+ 
+  .header .in ul li:hover > .login {
+    display: initial;
+  }
+
+  
+  .header .navigation ul li ul li span {
+    float: right;
+    color: var(--color-white);
+    background: var(--color-primary-dark);
+    padding: 5px 10px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  #toggle ,
+  .header label {
+    display: none;
+    cursor: pointer;
+
+  }
+  
+  .in img {
+    width: 45px;
+    height: 35px;
+    border-radius: 50%;
+  }
+  .header label img {
+    width: 45px;
+    height: 35px;
+  }
+  
+  @media(max-width: 850px) {
+    .header label {
+      display: initial;
+    }
+    .toggle{
+        position: relative;
+    }
+    .toggle::after {
+        content: "";
+        position: absolute;
+        top: -50px;
+        left: -100px;
+        z-index: -1;
+        transition: all 0.5s;
+        box-shadow: #494949;
+
+    }
+  
+    .header {
+      padding: 20px 10%;
+    }
+  
+    .header .navigation {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--color-primary);
+  
+      display: none;
+    }
+  
+    .header .navigation ul li {
+      width: 100%;
+      border-top: 1px solid var(--color-primary-light);
+    }
+  
+    .header .navigation ul li a {
+      padding: 8px 30px 8px 10%;
+    }
+  
+    .header .navigation ul li ul {
+      position: relative;
+      width: 100%;
+      left: 0;
+    }
+  
+    .header .navigation ul li ul li {
+      background: var(--color-primary);
+    }
+  
+    .header .navigation ul li ul li ul {
+      position: relative;
+      width: 100%;
+      left: 0;
+    }
+  
+    .header .navigation ul li ul li span {
+      padding: 4px 10px;
+      font-size: 10px;
+    }
+  
+    #toggle:checked ~ .navigation {
+      display: block;
+    }
+  }
+ 
